@@ -27,7 +27,7 @@ services:
       - "7567:7567"
   
   ui:
-    image: eu.gcr.io/store_dev_001/ui:v0.0.1
+    image: pjgg/genieacs-ui:v0.0.1
     ports:
       - "3000:3000"
 
