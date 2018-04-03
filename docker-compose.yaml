@@ -25,6 +25,11 @@ services:
       - "db"
     ports:
       - "7567:7567"
+  
+  ui:
+    image: eu.gcr.io/store_dev_001/ui:v0.0.1
+    ports:
+      - "3000:3000"
 
   db:
     image: mongo:3.4
