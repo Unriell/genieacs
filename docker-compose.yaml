@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  core:
+    build: .
+    depends_on:
+      - "db"
+    ports:
+      - "7547:7547"
+
+  nbi:
+    build: 
+      context: .
+      dockerfile: Dockerfile.nbi
+    depends_on:
+      - "db"
+    ports:
+      - "7557:7557"
+
+  northbound:
+    build: 
+      context: .
+      dockerfile: Dockerfile.northbound
+    depends_on:
+      - "db"
+    ports:
+      - "7567:7567"
+
+  db:
+    image: mongo:3.4
+    container_name: mongodb
+    volumes:
+      - "db-data:/data/db"
+    ports:
+      - "27017:27017"
+volumes:
+  db-data:
