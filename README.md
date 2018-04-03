@@ -13,6 +13,22 @@ device provisioning scenarios and other automated operations such as firmware
 upgrade
 - **Extensive API**: A rich HTTP-based API allows easy integration with other
 systems
+## Launch everything with Docker! (development enviroment)
+
+*Requirements*
+
+ - docker-compose v3
+ - docker
+ - make
+
+ Just run this command 
+ ```
+ make up
+ ```
+
+Your device will report telemetry data to *localhost:7547*. You also have a UI over *localhost:3000*. 
+MongoDB it's over *127.0.0.1:27017* (default user/password). 
+
 
 ## Quick Start
 
